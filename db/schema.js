@@ -1,14 +1,14 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const ResultsSchema = new Schema ({
+const AnswerSchema = new Schema ({
   value: String,
   count: Number
 })
 
-const QuestionsSchema = new Schema({
+const QuestionSchema = new Schema({
   Query: String, 
-  results: [ResultsSchema]
+  answers: [AnswersSchema]
 })
 
 const SurveySchema = new Schema({
@@ -17,8 +17,12 @@ const SurveySchema = new Schema({
   questions: [QuestionsSchema]
 })
 
+const AnswerModel = mongoose.model('Answer', AnswerSchema)
+const QuestionModel = mongoose.model('Question', QuestionSchema)
+const SurveySchema = mongoose.model('Survey', SurveySchema)
+
 module.exports = {
-  Results = ResultsSchema,
-  Questions = QuestionsSchema,
-  Survey = SurveySchema
+  Answers: AnswersSchema,
+  Questions: QuestionsSchema,
+  Survey: SurveySchema
 }
