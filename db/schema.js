@@ -1,25 +1,24 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-mongoose.Promise = global.Promise;
+const ResultsSchema = new Schema ({
+  value: String,
+  count: Number
+})
 
-var UserSchema = new Schema({
-  email: String,
-  password_digest: String,
-  created_at: Date,
-  updated_at: Date
-});
+const QuestionsSchema = new Schema({
+  Query: String,
+  results: [ResultsSchema]
+})
 
-UserSchema.pre('save', function(next) {
-  now = new Date();
-  this.updated_at = now;
-
-  if (!this.created_at) { this.created_at = now; }
-  next();
-});
-
-var UserModel = mongoose.model('User', UserSchema);
+const SurveySchema = new Schema({
+  name: String,
+  author: String,
+  questions: [QuestionsSchema]
+})
 
 module.exports = {
-  User: UserModel
+  Results = ResultsSchema,
+  Options = OptionsSchema,
+  Survey = SurveySchema
 }
