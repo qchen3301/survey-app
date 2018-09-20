@@ -1,33 +1,53 @@
 require('dotenv').config()
-var express = require('express');
-var bodyParser = require('body-parser');
-var session = require('express-session');
-var methodOverride = require('method-override');
-var logger = require('morgan');
-var hbs = require('hbs')
-var mongoose = require('mongoose');
+const createError = require('http-errors')
+const express = require('express')
+const path = require('path')
+const cookieParser = require('cookie-parser')
+const methodOverride = require('method-override')
+const logger = require('morgan')
+const hbs = require('hbs')
+const mongoose = require('mongoose')
 
-var surveysController = require('./controllers/survey.js');
-var questionsController = require('./controllers/questions.js');
+mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true})
 
-var app = express();
+const indexRouter = require('./routes')
+const surveyRouter = require('./routes/survey')
+const questionRouter = require('./routes/questions')
+const answerRouter = require('./routes/answer') 
 
-mongoose.connect('mongodb://localhost/surveys');
+let app = express()
 
+//view engine setup
+app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'hbs')
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(logger('dev'));
-app.use(methodOverride('_method'));
+app.use(methodOverride('_method'))
+app.use(logger('dev'))
+app.use(express.json())
+app.use(express.urlencoded({extended: false}))
+app.use(cookieParser())
+app.use(express.static(path.join(__dirname,'public')))
 
-app.use(session({
-  secret: "derpderpderpcats",
-  resave: false,
-  saveUninitialized: false
-}));
+//app.use routers
+app.use('/', indexRouter)
+app.use('/survey', surveyRouter)
+app.use('survey/:surveyId/question', questionRouter)
+app.use('survey/surveyId/question/:questionId/answer', answerRouter)
 
-app.use('/users', usersController);
-app.use('/sessions', sessionsController);
+//catch 404 and fwd to error handler
+app.use( (req, res, next) => {
+  next(createError(404))
+})
 
-app.listen(4000);
+//error handler
+app.use((err, req, res, next) => {
+  //set locals, only providing error in development
+  res.locals.message = err.message
+  res.locals.error = req.app.get('env') === 'development' ? err: {}
+
+  //render error page
+  res.status(err.status || 500)
+  res.render('error')
+})
+
+module.exports = app
