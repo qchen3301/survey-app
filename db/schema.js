@@ -7,18 +7,18 @@ const ResultsSchema = new Schema ({
 })
 
 const QuestionsSchema = new Schema({
-  Query: String,
+  Query: String, 
   results: [ResultsSchema]
 })
 
 const SurveySchema = new Schema({
-  name: String,
-  author: String,
+  title: String, 
+  author: String, 
   questions: [QuestionsSchema]
 })
 
 module.exports = {
   Results = ResultsSchema,
-  Options = OptionsSchema,
+  Questions = QuestionsSchema,
   Survey = SurveySchema
 }
