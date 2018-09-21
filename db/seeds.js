@@ -54,7 +54,7 @@ const barkley = new Survey({
 
 Survey.deleteMany()
 .then(()=>{
-    return Survey.insertMany(doge, stingray, barkley)
+    return Survey.insertMany([doge, stingray, barkley])
 })
 .then(()=> {
     console.log('Done Seeding!')

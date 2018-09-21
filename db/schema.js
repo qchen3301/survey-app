@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
 const AnswerSchema = new Schema ({
   value: String,
@@ -22,7 +22,7 @@ const QuestionModel = mongoose.model('Question', QuestionSchema)
 const SurveyModel = mongoose.model('Survey', SurveySchema)
 
 module.exports = {
-  Answer: AnswerSchema,
-  Question: QuestionSchema,
-  Survey: SurveySchema
+  Answer: AnswerModel,
+  Question: QuestionModel,
+  Survey: SurveyModel
 }
