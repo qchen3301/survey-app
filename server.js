@@ -12,10 +12,10 @@ mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true})
 
 const indexRouter = require('./routes')
 const surveyRouter = require('./routes/survey')
-const questionRouter = require('./routes/questions')
+const questionRouter = require('./routes/question')
 const answerRouter = require('./routes/answer') 
 
-let app = express()
+var app = express()
 
 //view engine setup
 app.set('views', path.join(__dirname, 'views'))
