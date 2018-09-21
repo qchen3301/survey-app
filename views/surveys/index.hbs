@@ -1,0 +1,8 @@
+<h1>All Surveys <a href='/surveys/new'>( new )</a></h1>
+
+<div>
+  {{#each surveys}}
+  <div>Survey: {{this.title}} <a href='/surveys/{{this._id}}'>Go to survey</a></div>
+  <div>Author: {{this.author}}</div>
+  {{/each}}
+</div>

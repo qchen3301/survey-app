@@ -7,7 +7,7 @@ const AnswerSchema = new Schema ({
 })
 
 const QuestionSchema = new Schema({
-  Query: String, 
+  query: String, 
   answers: [AnswerSchema]
 })
 
@@ -22,7 +22,7 @@ const QuestionModel = mongoose.model('Question', QuestionSchema)
 const SurveyModel = mongoose.model('Survey', SurveySchema)
 
 module.exports = {
-  Answers: AnswerSchema,
-  Questions: QuestionSchema,
+  Answer: AnswerSchema,
+  Question: QuestionSchema,
   Survey: SurveySchema
 }
