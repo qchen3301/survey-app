@@ -1,0 +1,11 @@
+<h1>Showing One Survey</h1>
+
+<div>Title: {{survey.title}}</div>
+<div>Author: {{survey.author}}</div>
+
+<form action='/surveys/{{survey._id}}?_method=DELETE' method='POST'>
+  <input type="submit" value='Delete Survey'>
+</form>
+
+<div><a href='/surveys/{{survey._id}}/edit'>Edit Survey</a></div>
+<div><a href='/surveys'>Go Back to Surveys</a></div>

@@ -42,7 +42,7 @@ router.post('/', (req,res) => {
 router.put('/:id', (req, res) => {
     Survey.findByIdAndUpdate(req.params.id, req.body)
     .then((survey) => {
-        res.redirect(`surveys/${survey._id}`)
+        res.redirect(`${survey._id}`)
     })
 })
 
