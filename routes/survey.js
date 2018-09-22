@@ -29,7 +29,7 @@ router.get('/:id/edit', (req,res) => {
     Survey.findById(req.params.id)
     .then((survey) => {
         const questions = survey.questions
-        const answers = survery.questions.answers
+        const answers = survey.questions.answers
         res.render('surveys/edit', {survey, questions, answers})
     })
 })
