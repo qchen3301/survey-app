@@ -43,10 +43,10 @@ router.post('/', (req,res) => {
 })
 
 //UPDATE
-router.put('/:id', (req, res) => {
+router.put('/:id/', (req, res) => {
     Survey.findByIdAndUpdate(req.params.id, req.body)
     .then((survey) => {
-        res.redirect('back')
+        res.redirect(`/surveys/${survey._id}/`)
     })
 })
 
