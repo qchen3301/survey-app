@@ -32,7 +32,7 @@ app.use(express.static(path.join(__dirname,'public')))
 app.use('/', indexRouter)
 app.use('/surveys', surveyRouter)
 app.use('surveys/:surveyId/questions', questionRouter)
-app.use('surveys/surveyId/questions/:questionId/answer', answerRouter)
+app.use('surveys/:surveyId/questions/:questionId/answer', answerRouter)
 
 //catch 404 and fwd to error handler
 app.use( (req, res, next) => {

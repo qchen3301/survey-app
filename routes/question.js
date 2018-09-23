@@ -3,25 +3,15 @@ const router = express.Router( {mergeParams:true} )
 const { Survey, Question } = require('../db/schema')
 
 //EDIT, RENDER EDIT FORM
-router.get('/:id', (req,res) => {
+router.get('/:id/edit', (req,res) => {
+    Survey.findById(req.params.surveyId)
     Question.findById(req.params.id)
-    .then((query) => {
-        res.render('questions/edit', {query} )
+    .then((survey)=>{
+        res.render('questions/edit', {
+            surveyId: req.params.surveyId,
+            question: Question.id(req.params.id)
+        })
     })
 })
-
-
-//CREATE
-/*router.post('/', (req, res) => {
-    const newQuestion = new Question(req.body)
-    User.findById(req.params.surveyId)
-    .then((survey) => {
-        survey.questions.push(newQuestion)
-        return survey.save()
-    })
-    .then((survey) => {
-        res.redirect(`/surveys/${req.params.surveyId}/questions`)
-    })
-})*/
 
 module.exports = router

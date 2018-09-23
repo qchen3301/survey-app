@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router( {mergeParams: true} )
-const { Survey } = require('../db/schema')
+const { Survey, Question, Answer } = require('../db/schema')
 
 //INDEX, SHOW ALL
 router.get('/', (req,res) => {
@@ -15,8 +15,8 @@ router.get('/new', (req,res) => {
     res.render('surveys/new')
 })
 //SHOW, SHOW ONE
-router.get('/:id', (req,res) => {
-    Survey.findById(req.params.id)
+router.get('/:surveyId', (req,res) => {
+    Survey.findById(req.params.surveyId)
     .then((survey) => {
         const questions = survey.questions
         const answers = survey.questions.answers
@@ -46,7 +46,7 @@ router.post('/', (req,res) => {
 router.put('/:id', (req, res) => {
     Survey.findByIdAndUpdate(req.params.id, req.body)
     .then((survey) => {
-        res.redirect(`${survey._id}`)
+        res.redirect('back')
     })
 })
 
