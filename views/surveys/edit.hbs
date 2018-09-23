@@ -6,16 +6,14 @@
   <div>Author: <input type=' text' name='author' value='{{survey.author}}'></div>
   <div>
     {{#each questions}}
-      Query: <input type='text' name='query' value='{{this.query}}'><br>
+      Query: {{this.query}}<br>
+      <a href='/surveys/{{../survey._id}}/questions/{{this._id}}/edit'>Edit question</a>
       {{#each answers}}
-        Choice: <input type='text' name='value' value='{{this.value}}'><br>
-        <br>
+        Choice:{{this.value}}<br>
       {{/each}}
     {{/each}}
   </div>
   <div><input type='submit' value='Update Survey'></div>
 </form>
 </div>
-<div>
-  <a href='/surveys/{{survey._id}}/questions/{{questions._id}}/edit'>Edit question</a>
-</div>
+

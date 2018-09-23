@@ -1,0 +1,9 @@
+<h1>All Questions</h1>
+<div>
+    {{#each questions}}
+    <div>
+        Query: {{this.query}}
+        <a href='/surveys/{{../surveyId}}/questions/{{this._id}}'>Go to question</a>
+    </div>
+    {{/each}}
+</div>
