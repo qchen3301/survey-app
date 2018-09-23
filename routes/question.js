@@ -17,7 +17,10 @@ router.get('/', (req,res) =>{
 router.get('/:id/edit', (req,res) => {
     Survey.findById(req.params.surveyId)
     .then((survey)=>{
-        res.send("Its German for the bart the")
+        res.render('questions/edit', {
+            surveyId: req.params.surveyId,
+            question: survey.questions.id(req.params.id)
+        })
     })
 })
 
