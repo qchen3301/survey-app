@@ -5,15 +5,17 @@ const { Survey, Question, Answer } = require('../db/schema')
 //EDIT, RENDER EDIT FORM
 router.get('/edit', (req,res) => {
     Survey.findById(req.params.surveyId)
-    Question.findById(req.params.questionId)
     .then((survey) => {
-        res.render('answers/edit')
+        const quest = survey.questions.id(req.params.questionId)
+        console.log(quest)
+        res.render('answers/edit', {quest})
     })
 })
 
 router.put('/:id', (req, res) => {
     Survey.findByIdAndUpdate(req.params.surveyId, req.body)
     .then((survey) => {
+
         res.redirect(`back`)
     })
 })
