@@ -12,4 +12,11 @@ router.get('/:id/edit', (req,res) => {
     })
 })
 
+router.put('/:id', (req, res) => {
+    Survey.findByIdAndUpdate(req.params.surveyId, req.body)
+    .then((survey) => {
+        res.redirect(`/surveys/${survey._id}/questions/edit`)
+    })
+})
+
 module.exports = router

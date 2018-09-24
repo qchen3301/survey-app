@@ -33,7 +33,7 @@ router.put('/:id/', (req, res) => {
         return survey.save()
     })
     .then(()=>{
-        res.redirect(`/surveys/${req.params.surveyId}/`)
+        res.redirect(`/surveys/${req.params.surveyId}/questions/${req.params.questionId}/answers/${req.params.idOfAnswer}/edit`)
     })
 })
 

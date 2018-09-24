@@ -15,11 +15,11 @@ router.get('/new', (req,res) => {
     res.render('surveys/new')
 })
 //SHOW, SHOW ONE
-router.get('/:surveyId', (req,res) => {
-    Survey.findById(req.params.surveyId)
+router.get('/:id', (req,res) => {
+    Survey.findById(req.params.id)
     .then((survey) => {
         const questions = survey.questions
-        const answers = survey.questions.answers
+        const answers = survey.answers
         res.render('surveys/show', {survey, questions, answers})
     })
 })
@@ -28,9 +28,7 @@ router.get('/:surveyId', (req,res) => {
 router.get('/:id/edit', (req,res) => {
     Survey.findById(req.params.id)
     .then((survey) => {
-        const questions = survey.questions
-        const answers = survey.questions.answers
-        res.render('surveys/edit', {survey, questions, answers})
+        res.render('surveys/edit', {survey})
     })
 })
 
@@ -43,10 +41,10 @@ router.post('/', (req,res) => {
 })
 
 //UPDATE
-router.put('/:id/', (req, res) => {
+router.put('/:id', (req, res) => {
     Survey.findByIdAndUpdate(req.params.id, req.body)
     .then((survey) => {
-        res.redirect(`/surveys/${survey._id}/`)
+        res.redirect(`/surveys/${survey._id}`)
     })
 })
 
