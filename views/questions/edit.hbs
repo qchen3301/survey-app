@@ -8,6 +8,12 @@
         <div>
             <input type='submit' value='Update Query'>
         </div>
+        <div>        
+            {{#each answers}}
+                {{this.value}}<br>
+            {{/each}}
+            
+        </div>
     </form>
     <div>
         <form><input type="button" value="Go back!" onclick="history.back()"></form>

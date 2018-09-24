@@ -2,16 +2,6 @@ const express = require('express')
 const router = express.Router( {mergeParams:true} )
 const { Survey, Question } = require('../db/schema')
 
-//INDEX, SHOW ALL
-router.get('/', (req,res) =>{
-    Survey.findById(req.params.surveyId)
-    .then((user)=> {
-        res.render('questions/index', {
-            surveyID: req.params.surveyId,
-            questions: survey.question
-        })
-    })
-})
 
 //EDIT, RENDER EDIT FORM
 router.get('/:id/edit', (req,res) => {
@@ -19,7 +9,8 @@ router.get('/:id/edit', (req,res) => {
     .then((survey)=>{
         res.render('questions/edit', {
             surveyId: req.params.surveyId,
-            question: survey.questions.id(req.params.id)
+            question: survey.questions.id(req.params.id),
+            answers: survey.questions.id(req.params.id).answers
         })
     })
 })
@@ -33,7 +24,7 @@ router.put('/:id/', (req, res) => {
         return survey.save()
     })
     .then(()=>{
-        res.redirect(`/surveys/${req.params.surveyId}/questions/${req.params.questionId}/answers/${req.params.idOfAnswer}/edit`)
+        res.redirect(`back`)
     })
 })
 
