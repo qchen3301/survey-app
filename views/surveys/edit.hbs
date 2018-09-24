@@ -7,6 +7,10 @@
   <div>Author: <input type=' text' name='author' value='{{survey.author}}'></div>
   <div><input type='submit' value='Update Survey Title & Author'></div>
 </form>
+{{#each questions}}
+
+<a href='/surveys/{{../survey.id}}/questions/{{this._id}}/edit'>Edit The Questions</a>
+{{/each}}
 </div>
 
 

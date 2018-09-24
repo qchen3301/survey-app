@@ -28,7 +28,8 @@ router.get('/:id', (req,res) => {
 router.get('/:id/edit', (req,res) => {
     Survey.findById(req.params.id)
     .then((survey) => {
-        res.render('surveys/edit', {survey})
+        questions = survey.questions
+        res.render('surveys/edit', {survey, questions})
     })
 })
 
@@ -44,7 +45,7 @@ router.post('/', (req,res) => {
 router.put('/:id', (req, res) => {
     Survey.findByIdAndUpdate(req.params.id, req.body)
     .then((survey) => {
-        res.redirect(`/surveys/${survey._id}`)
+        res.redirect(`/surveys/${survey._id}/edit`)
     })
 })
 
