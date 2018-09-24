@@ -8,4 +8,7 @@ IM HEEEEREEE
 {{/each}}
 </div>
 
+<form action='/surveys/{{uGotServed}}/questions/{{uGotQuest}}/answers/deleteAll?_method=DELETE' method='POST'>
+  <input type='submit' value='Create New Choices'>
+</form>
 <form><input type='button' value='Back' onClick='history.back()'></form>

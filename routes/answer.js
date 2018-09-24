@@ -7,19 +7,27 @@ router.get('/edit', (req,res) => {
     Survey.findById(req.params.surveyId)
     .then((survey) => {
         const quest = survey.questions.id(req.params.questionId)
-        console.log(quest)
-        res.render('answers/edit', {quest})
+        res.render('answers/edit', {
+            quest, 
+            uGotServed: req.params.surveyId,
+            uGotQuest: req.params.questionId
+        })
     })
 })
 
-router.put('/:id', (req, res) => {
-    Survey.findByIdAndUpdate(req.params.surveyId, req.body)
+
+//DELETE
+router.delete('/deleteAll', (req, res) => {
+   Survey.findById(req.params.surveyId)
     .then((survey) => {
-
-        res.redirect(`back`)
+        const question = survey.questions.id(req.params.questionId)
+        question.answers.remove()
+        return survey.save()
+    })
+    .then(() => {
+        res.redirect('surveys/index')
     })
 })
-
 
 
 module.exports = router
