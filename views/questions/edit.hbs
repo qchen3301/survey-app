@@ -1,1 +1,15 @@
 We are moved to tears by the size of this thing
+
+<div>
+    <form action='/surveys/{{surveyId}}/questions/{{question._id}}?_method=PUT' method='POST'>
+        <div>
+            Whatchu wanna know fam: <input type='text' name='query' value='{{question.query}}'>
+        </div>
+        <div>
+            <input type='submit' value='Update Query'>
+        </div>
+    </form>
+    <div>
+        <form><input type="button" value="Go back!" onclick="history.back()"></form>
+    </div>
+</div>

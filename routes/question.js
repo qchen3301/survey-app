@@ -24,4 +24,17 @@ router.get('/:id/edit', (req,res) => {
     })
 })
 
+
+//UPDATE
+router.put('/:id/', (req, res) => {
+    Survey.findByIdAndUpdate(req.params.surveyId)
+    .then((survey) => {
+        survey.questions.id(req.params.id).set(req.body)
+        return survey.save()
+    })
+    .then(()=>{
+        res.redirect(`/surveys/${req.params.surveyId}/`)
+    })
+})
+
 module.exports = router
