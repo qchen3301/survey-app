@@ -22,6 +22,7 @@ This simple application allows a user to create a survey and demonstrates techni
 [Live Site](https://immense-wave-34635.herokuapp.com/)
 
 ####Initial Wireframes
+
 ![wireframe](https://raw.githubusercontent.com/qchen3301/survey-app/master/wireframes/wireframe01.png)
 
 ![wireframe](https://raw.githubusercontent.com/qchen3301/survey-app/master/wireframes/wireframe02.png)
@@ -29,4 +30,5 @@ This simple application allows a user to create a survey and demonstrates techni
 ![wireframe](https://raw.githubusercontent.com/qchen3301/survey-app/master/wireframes/wireframe03.png)
 
 ####Initial ERD
+
 ![erd](https://raw.githubusercontent.com/qchen3301/survey-app/master/wireframes/erd.png)
