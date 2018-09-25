@@ -1,10 +1,33 @@
-<h1>New Answers</h1>
-
-<form action='/surveys/{{surveyId}}/questions/{{questionId}}/answers' method='POST'>
-  <div>1st choice:<input type='text' name='value'></div>
-  <div>2nd choice:<input type='text' name='value'></div>
-  <div>3rd choice:<input type='text' name='value'></div>
-  <div>4th choice:<input type='text' name='value'></div>
-  <div>5th choice:<input type='text' name='value'></div>
-  <div><input type='submit' value='Add Question to Survey'></div>
-</form>
+<section class="section is-large has-background-success">
+  <div class="columns is-mobile is-centered is-two-fifths">
+    <div class="card">
+      <div class="card-content">
+        <div class="field">
+          <form action='/surveys/{{surveyId}}/questions/{{questionId}}/answers' method='POST'>
+            <label class="label">1st Choice</label>
+            <div class="control">
+              <input class="input is-large is-danger" type="text" name="value">
+            </div>
+            <label class="label">2nd Choice</label>
+            <div class="control">
+              <input class="input is-large is-danger" type="text" name="value">
+            </div>
+            <label class="label">3rd Choice</label>
+            <div class="control">
+              <input class="input is-large is-danger" type="text" name="value">
+            </div>
+            <label class="label">4th Choice</label>
+            <div class="control">
+              <input class="input is-large is-danger" type="text" name="value">
+            </div>
+            <label class="label">5th Choice</label>
+            <div class="control">
+              <input class="input is-large is-danger" type="text" name="value">
+              <input class="button is-link" type="submit" value='Add Question to Survey'>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

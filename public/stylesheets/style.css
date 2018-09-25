@@ -3,6 +3,7 @@
   background-color: rgb(100, 98, 98);
   background-blend-mode: multiply;
   background-size: 100% 100%;
+  font-family: 'UnifrakturCook', cursive;
 }
 
 
@@ -12,4 +13,5 @@
   background-blend-mode: multiply;
   background-size: 100% 100%;
   background-repeat: no-repeat;
+  font-family: 'UnifrakturCook', cursive;
 }
