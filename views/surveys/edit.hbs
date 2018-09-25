@@ -1,16 +1,26 @@
-<h1>Edit Survey</h1>
-
-<div>
-<form action='/surveys/{{survey._id}}?_method=PUT' method='POST'>
-  <div>Title: <input type='text' name='title' value='{{survey.title}}'></div>
-  <div>Author: <input type=' text' name='author' value='{{survey.author}}'></div>
-  <div><input type='submit' value='Update Survey Title & Author'></div>
-</form>
-{{#each questions}}
-
-
-{{/each}}
-</div>
-
-
-<form><input type='button' value='Back' onClick='history.back()'></form>
+<section class="section is-large has-background-success">
+  <div class="columns is-mobile is-centered is-two-fifths">
+    <div class="card">
+      <div class="card-content">
+        <div class="field">
+          <form action='/surveys/{{survey._id}}?_method=PUT' method='POST'>
+          <label class="label">Title</label>
+          <div class="control">
+          <input class="input is-large is-danger" type='text' name='title' value='{{survey.title}}'>
+          </div>
+          <label class="label">Authorship</label>
+          <div class="control">
+          <input class="input is-large is-danger" type='text' name='author' value='{{survey.author}}'>
+          </div><br>
+          <input class="button is-link" type='submit' value='Update Survey Title & Author'>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section is-small" id="editFooter">
+  <h1 class="title">
+    <a href='/surveys'>Ressentiment</a>
+  </h1>
+</section>

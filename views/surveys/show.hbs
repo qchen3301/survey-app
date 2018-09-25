@@ -1,19 +1,33 @@
-<h1>Showing One Survey</h1>
-
-<div>Title: {{survey.title}}</div>
-<div>Author: {{survey.author}}</div>
-<div>
-  {{#each questions}}
-    <p>Question: {{query}}</p>
-    {{#each answers}}
-    <p>Is it? - {{value}}</p>
+<section class="section is-small has-background-success">
+  <div class="columns is-mobile is-centered">
+    <h1 class="title is-1 has-text-centered has-text-white">
+      <br><br>
+      <p>{{survey.title}}</p>
+      <p>{{survey.author}}</p>
+    </h1>
+  </div>
+</section>
+<section class="section is-small has-background-danger">
+  <div class="column is-mobile is-centered">
+    <h1 class="title is-4 has-text-centered has-text-white">
+    {{#each questions}}
+    Question: {{query}}<br><br>
+      {{#each answers}}
+      Is it? - {{value}}<br><br>
+      {{/each}}
     {{/each}}
- {{/each}}
-</div>
-
-<a href='/surveys/{{survey._id}}/edit'>Edit</a>
-<form action='/surveys/{{survey._id}}?_method=DELETE' method='POST'>
-  <input type="submit" value='Delete Survey'>
-</form>
-
-<div><a href='/surveys'>Go Back to Surveys</a></div>
+    </h1>
+    <h2 class="title has-text-centered has-text-white">
+      <a href='/surveys/{{survey._id}}/edit'>Edit</a>
+      <br><br>
+      <form action='/surveys/{{survey._id}}?_method=DELETE' method='POST'>
+        <input class="button is-link" type="submit" value='Delete Survey'>
+      </form>
+    </h2>
+  </div>
+</section>
+<section class="section is-medium" id="showFooter">
+  <h1 class="title">
+    <a href='/surveys'>Ressentiment</a>
+  </h1>
+</section>

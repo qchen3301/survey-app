@@ -15,3 +15,8 @@
   background-repeat: no-repeat;
   font-family: 'UnifrakturCook', cursive;
 }
+
+#showFooter, #editFooter, #newFooter {
+  background-color: black;
+  font-family: 'UnifrakturCook', cursive;
+}
