@@ -6,7 +6,6 @@
   font-family: 'UnifrakturCook', cursive;
 }
 
-
 #indexSectionBackground {
   background-image: url(https://raw.githubusercontent.com/qchen3301/survey-app/master/public/assets/mongo_wall.jpg);
   background-color: rgb(100, 98, 98);
@@ -14,9 +13,37 @@
   background-size: 100% 100%;
   background-repeat: no-repeat;
   font-family: 'UnifrakturCook', cursive;
+  font-size: 2em;
 }
 
 #showFooter, #editFooter, #newFooter {
   background-color: black;
   font-family: 'UnifrakturCook', cursive;
+}
+
+#indexSectionPollList {
+  background-image: linear-gradient(rgb(8, 58, 11), black);
+  font-family: 'UnifrakturCook', cursive;
+}
+
+#editSectionTop {
+  background-color: rgb(8, 58, 11);
+  font-family: 'Homemade Apple', cursive;
+}
+
+#editSectionMiddle{
+  background-image: linear-gradient(rgb(8, 58, 11), black);
+  font-family: 'Homemade Apple', cursive;
+}
+
+#editSection, #newSurveyQuestions, #newSurveyAnswers {
+  background-image: linear-gradient(rgb(8, 58, 11), black);
+}
+
+.card-content {
+  background-color: rgba(97, 90, 90, 0.383)
+}
+
+#newSurveyInit{
+  background-color: rgb(8, 58, 11);
 }
