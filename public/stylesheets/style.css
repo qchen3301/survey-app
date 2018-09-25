@@ -1,3 +1,8 @@
+#splashPage, #splashPageBottom {
+  background-image:url(https://raw.githubusercontent.com/qchen3301/survey-app/master/public/assets/project_2_title_card.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
 #indexHeroFlavorText {
   background-image: url(https://raw.githubusercontent.com/qchen3301/survey-app/master/public/assets/mongo_titan.jpg);
   background-color: rgb(100, 98, 98);
