@@ -1,4 +1,4 @@
-<section class="hero is-medium is-bold is-primary">
+<section class="hero is-success is-medium has-text-centered is-bold is-primary">
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
@@ -9,16 +9,28 @@
       </h2>
     </div>
   </div>
-
-
-
 </section>
-<h1>Oh Mei friend!</h1>
-<a class="btn btn-danger btn-large" href='/surveys/new'>( new )</a>
 
-<div>
-  {{#each surveys}}
-  <div>Survey: {{this.title}} <a href='/surveys/{{this._id}}'>Go to survey</a></div>
-  <div>Author: {{this.author}}</div>
-  {{/each}}
+<section class="section">
+<div class="columns is-mobile is-centered">
+  <div class="is-two-thirds">
+    <h1 class="title is-3 has-text-centered">
+      <p>On that day WDI-17 received a grim reminder.</p> 
+      <p>We lived in fear of MongoDB</p> 
+      <p>And were disgraced to code in these frameworks called Node/Express.js</p>
+    </h1>
+  </div>
 </div>
+</section>
+
+<section class="section">
+<div class="columns is-mobile is-centered">
+  <div class="is-two-thirds">
+  {{#each surveys}}
+    <h1 class="title is-4 has-text-centered">Survey: {{this.title}}</h1> 
+    <h2 class="subtitle is-5 has-text-centered">Author: {{this.author}}</h2>
+    <h3 class="title is-6 has-text-centered"><a href='/surveys/{{this._id}}'>Go to survey</a></h3>
+  {{/each}}
+  </div>
+</div>
+</section>

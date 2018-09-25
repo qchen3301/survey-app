@@ -1,7 +1,22 @@
 <h1>New Survey</h1>
-
 <form action='/surveys' method='POST'>
-  <div>Title: <input type='text' name='title'></div>
-  <div>By: <input type='text' name='author'></div>
-  <div><input type='submit' value='Create New Survey'></div>
+<div class="field">
+  <label class="label">Title:</label>
+  <div class="control">
+    <input class="input" type="text" name="title" placeholder="Sind die sin Essen">
+  </div>
+</div>
+
+<div class="field">
+  <label class="label">Authorship:</label>
+  <div class="control">
+    <input class="input" type='text' name='author' placeholder="Nein Wie est Die Jaeger">
+  </div>
+</div>
+
+<div class="field">
+  <div class="control">
+    <input class="button is-link" type="submit" value="Create Neue Survey">
+  </div>
+</div>
 </form>
