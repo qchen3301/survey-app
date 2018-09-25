@@ -1,13 +1,22 @@
 <section class="section is-large has-background-success">
-  <div class="columns is-mobile is-centered">
+  <div class="columns is-mobile is-centered is-two-fifths">
     <div class="card">
       <div class="card-content">
-        <form action='/surveys' method='POST'>
-        <input class="input" type="text" name="title" placeholder="Sind die sin Essen">
-        <input class="input" type='text' name='author' placeholder="Nein Wie est Die Jaeger">
-        <input class="button is-link" type="submit" value="Create Neue Survey">
-        </form>
+        <div class="field">
+          <form action='/surveys' method='POST'>
+            <label class="label">Title of Survey</label>
+            <div class="control">
+            <input class="input is-large is-danger" type="text" name="title" placeholder="Sind die sin Essen">
+            </div>
+            <label class="label">Authorship</label>
+            <div class="control">
+            <input class="input is-large is-danger" type='text' name='author' placeholder="Nein Wie est Die Jaeger">
+            <input class="button is-link" type="submit" value="Create Neue Survey">
+            </div>
+          </form>
+        </div>
       </div>
     </div>
-</div>
+  </div>
 </section>
+

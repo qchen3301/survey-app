@@ -1,6 +1,17 @@
-<h1>Add a question to this survey</h1>
-
-<form action='/surveys/{{surveyId}}/questions' method='POST'>
-  <div>Query:<input type='text' name='query'></div>
-  <div><input type='submit' value='Add Question to Survey'></div>
-</form>
+<section class="section is-large has-background-success">
+  <div class="columns is-mobile is-centered is-two-fifths">
+    <div class="card">
+      <div class="card-content">
+        <div class="field">
+          <form action='/surveys/{{surveyId}}/questions' method='POST'>
+          <label class="label">Query</label>
+          <div class="control">
+          <input class="input is-large is-danger" type="text" name="query">
+          <input class="button is-link" type='submit' value='Add Question to Survey'>        
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
