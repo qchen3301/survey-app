@@ -1,7 +1,15 @@
-#indexSectionFlavorText {
-  background-image: url(https://i.imgur.com/jpqYuze.jpg)
+#indexHeroFlavorText {
+  background-image: url(https://raw.githubusercontent.com/qchen3301/survey-app/master/public/assets/mongo_titan.jpg);
+  background-color: rgb(100, 98, 98);
+  background-blend-mode: multiply;
+  background-size: 100% 100%;
 }
 
-body {
-  font-family: 'Times New Roman', Times, serif
+
+#indexSectionBackground {
+  background-image: url(https://raw.githubusercontent.com/qchen3301/survey-app/master/public/assets/mongo_wall.jpg);
+  background-color: rgb(100, 98, 98);
+  background-blend-mode: multiply;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }

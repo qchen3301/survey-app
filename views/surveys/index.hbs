@@ -1,35 +1,34 @@
-<section class="hero is-success is-medium has-text-centered is-bold is-primary" style="background-image: url(\public\assets\mongo-titan.jpg); background-size:100% 100%;">
+<section class="hero is-success is-large has-text-centered is-bold is-primary" id="indexHeroFlavorText">
   <div class="hero-body">
     <div class="container">
-      <h1 class="title">
-        O, mein Freund! Jetzt hier ist ein Sieg
+      <h1 class="title is-3 has-text-centered has-text-danger">
+        <p>On that day WDI-17 received a grim reminder</p> <br><br>
+        <p>We lived in fear of MongoDB</p> <br><br>
+        <p>And were disgraced to code</p> <br><br>
+        <p>In these frameworks called Node/Express.js</p>
       </h1>
-      <h2 class="subtitle">
-        <a href='/surveys/new'>Dies ist der erste Glorie</a>
-      </h2>
     </div>
   </div>
 </section>
 
-<section id="indexSectionFlavorText" class="section" >
+<section class="section is-large" id="indexSectionBackground">
 <div class="columns is-mobile is-centered">
   <div class="is-two-thirds">
-    <h1 class="title is-3 has-text-centered">
-      <p>On that day WDI-17 received a grim reminder.</p> 
-      <p>We lived in fear of MongoDB</p> 
-      <p>And were disgraced to code in these frameworks called Node/Express.js</p>
+    <h1 class="title is-3 has-text-centered has-text-white" id="indexSectionFlavorText">
+      <a href='/surveys/new'>Dies ist der erste Glorie</a>
     </h1>
   </div>
 </div>
 </section>
 
-<section class="section">
+<section class="section is-large has-background-success">
 <div class="columns is-mobile is-centered">
   <div class="is-two-thirds">
   {{#each surveys}}
-    <h1 class="title is-4 has-text-centered">Survey: {{this.title}}</h1> 
-    <h2 class="subtitle is-5 has-text-centered">Author: {{this.author}}</h2>
-    <h3 class="title is-6 has-text-centered"><a href='/surveys/{{this._id}}'>Go to survey</a></h3>
+    <h1 class="title is-1 has-text-centered is-size-1"><a href='/surveys/{{this._id}}'>{{this.title}}</a></h1> 
+    <h2 class="subtitle is-2 has-text-centered is-size-2">Author: {{this.author}}</h2>
+    <br>
+    <br>
   {{/each}}
   </div>
 </div>

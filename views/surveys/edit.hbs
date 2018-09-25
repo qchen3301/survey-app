@@ -1,6 +1,5 @@
 <h1>Edit Survey</h1>
-<h2>I'm in surveys/edit</h2>
-<!--Model One form-->
+
 <div>
 <form action='/surveys/{{survey._id}}?_method=PUT' method='POST'>
   <div>Title: <input type='text' name='title' value='{{survey.title}}'></div>
@@ -9,7 +8,7 @@
 </form>
 {{#each questions}}
 
-<a href='/surveys/{{../survey.id}}/questions/{{this._id}}/edit'>Edit The Questions</a>
+
 {{/each}}
 </div>
 
